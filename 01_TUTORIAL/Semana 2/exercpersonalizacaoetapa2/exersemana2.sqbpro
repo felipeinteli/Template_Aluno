@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="C:/Users/Felipe/Documents/Inteli/Inteli 2022.2/Módulo 2/Programação Desenvolvimento Web/modulo2/01_TUTORIAL/Semana 2/exercpersonalizacaoetapa2/exersemana2.db" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser pragmas query" current="3"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="1192"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><current_table name="4,15:mainsqlite_sequence"/><default_encoding codec=""/><browse_table_settings/></tab_browse><tab_sql><sql name="SQL 1">BEGIN TRANSACTION;
+CREATE TABLE IF NOT EXISTS &quot;usuarios&quot; (
+    &quot;endereço&quot;	char,
+    &quot;telefone&quot;	char,
+    &quot;email&quot;	char,
+    &quot;sobre_mim&quot;	char(10),
+	&quot;cargo&quot; char,
+	&quot;cod_usuario&quot; INTEGER not null,
+	&quot;foto&quot; BLOB, 
+    PRIMARY KEY(&quot;cod_usuario&quot; AUTOINCREMENT)
+);
+
+CREATE TABLE IF NOT EXISTS &quot;formacao&quot; (
+    &quot;curso&quot;	char,
+    &quot;periodo_formacao&quot;	char,
+    &quot;sobre_curso&quot;	char,
+	FOREIGN KEY(&quot;cod_usuario&quot;) REFERENCES &quot;usuarios&quot;(&quot;cod_usuario&quot;),
+	
+CREATE TABLE IF NOT EXISTS &quot;experiencia&quot; (
+    &quot;nome_da_empresa&quot;	char,
+    &quot;periodo_experiecnai&quot;	char,
+    &quot;cargo&quot;	char,
+    &quot;sobre_experincia&quot;	char,
+    FOREIGN KEY(&quot;cod_usuario&quot;) REFERENCES &quot;usuarios&quot;(&quot;cod_usuario&quot;),
+
+CREATE TABLE IF NOT EXISTS &quot;realizacoes&quot; (
+    &quot;illustrator&quot;	integer NOT NULL,
+    &quot;photoshop&quot;	integer(11) NOT NULL UNIQUE,
+    &quot;corel draw&quot;	char(10) NOT NULL,
+    &quot;dreamweaver&quot;	char(128) NOT NULL,
+	&quot;html/css3&quot;	char(128) NOT NULL,
+    FOREIGN KEY(&quot;cod_usuario&quot;) REFERENCES &quot;usuarios&quot;(&quot;cod_usuario&quot;),
+	
+CREATE TABLE IF NOT EXISTS &quot;habilidades&quot; (
+    &quot;illustrator&quot;	integer NOT NULL,
+    &quot;photoshop&quot;	integer NOT NULL,
+    &quot;corel draw&quot;	integer NOT NULL,
+    &quot;dreamweaver&quot;	integer NOT NULL,
+	&quot;html/css3&quot;	integer NOT NULL,
+    FOREIGN KEY(&quot;cod_usuario&quot;) REFERENCES &quot;usuarios&quot;(&quot;cod_usuario&quot;),
+);
+CREATE TABLE IF NOT EXISTS &quot;personalidade&quot; (
+    &quot;lorem ipsu&quot;	integer NOT NULL,
+    &quot;lorem ipsu&quot;	integer NOT NULL,
+    &quot;lorem ipsu&quot;	integer NOT NULL,
+    &quot;lorem ipsu&quot;	integer NOT NULL,
+    &quot;lorem ipsu&quot;	integer NOT NULL,
+    FOREIGN KEY(&quot;cod_usuario&quot;) REFERENCES &quot;usuarios&quot;(&quot;cod_usuario&quot;),
+
+);
+
+COMMIT;</sql><current_tab id="0"/></tab_sql></sqlb_project>
