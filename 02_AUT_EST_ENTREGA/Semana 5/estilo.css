@@ -1,0 +1,102 @@
+/* CSS Document   style="width: 2000px ;" */
+
+
+#identificacao{
+    max-width: 100%;
+    background: rgba(100, 99, 99, 0.853);
+}
+
+#atividadesbackground{
+    max-width: 100%;
+    background: rgb(255, 255, 255);
+}
+
+#itensatividadesbackground{
+    max-width: 100%;
+    background: rgb(17, 38, 230);
+}
+
+#sobremimbackground{
+    max-width: 100%;
+    background: rgb(17, 38, 230);
+}
+
+#fontesobremimtitulos{
+    color: rgba(255, 253, 253, 0.982);
+}
+
+* {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+.vertical-container{
+    display: flex; /*vai usar o flex direction na organização */
+    /*border: 1px solid black; */
+    flex-direction: column;
+}
+
+.horizontal-container{
+display: flex;
+border: 1px solid black;
+flex-direction: row;
+}
+
+.center{
+    justify-content: center;
+    align-items: center;
+}
+
+.gap1{     /* gap é espaçamento entre itens que estão dentro de um container */
+    gap: 1rem;
+}
+
+.backgroundgrey{
+    background:#fff;
+    }
+
+.padding2rem{
+        padding: 2rem;
+    
+}
+
+.padding1rem{
+    padding: 1rem;
+
+}
+
+.w100-prct{
+    width: 100%;
+}
+
+.w500px{
+    width: 500px;
+}
+
+
+/*imagens flexiveis*/
+img {   
+      max-width: 450px;   
+      height: auto;  
+} 
+body, html{
+    background:#f1f1f1;
+    color: #fff;
+    height: 100%;
+}
+
+p, li, h1, h2 {
+    color: rgb(5, 5, 5);
+  }
+
+
+#principal{
+    /* Largura máxima */
+    max-width:960px;
+    /* Alinha ao centro */
+    margin:0 auto;
+    background:#fff;
+    overflow:hidden;
+    height: 100%;
+}
