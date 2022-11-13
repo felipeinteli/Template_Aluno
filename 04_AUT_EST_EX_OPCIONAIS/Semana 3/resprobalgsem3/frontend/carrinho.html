@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho de Compras</title>
+</head>
+<body>
+    <a href="troca.html"> EX1</a> <!--é um hiperlynk -->
+    <h1> CARRINHO DE COMPRAS </h1> -
+
+    <a href="troca.html"> EX1</a> - <a href="carrinho.html"> EX2</a>
+    <form name="carrinho">
+        <label  for = "qtd" > QUANTIDADE DE PRODUTOS</label> <input type="number" name = "qtd" id="qtd" min="0" value="0" readonly /> //readonly serve para a alteração ser apenas pelp botão
+        <input type="button" name="mais" value="+" onclick="chama(1);"> <input type="button" name="menos" value="-" onclick="chama(-1);" />
+    </form>
+    <script src="../backend/script.js"></script>
+</body>
+</html>
