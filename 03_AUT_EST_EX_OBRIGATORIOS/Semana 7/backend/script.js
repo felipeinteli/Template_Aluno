@@ -77,8 +77,19 @@ function exerc3() {
     for (let i = 1; i <= num; i++) { 
         lista.push(i);
         if (i % 3  === 0) {
-            lista.splice(i+1, 0, "pi");
+            lista.push("pi");
         }
     }
         document.write(lista);
+}
+
+function exerc4() {
+    let lparede = Number(document.getElementById('lparede').value);
+    let hparede = Number(document.getElementById('hparede').value);
+    let lazulejo = Number(document.getElementById('lazulejo').value);
+    let hazulejo = Number(document.getElementById('hazulejo').value);
+
+    let nazulejos = Math.ceil(((lparede/lazulejo)*(hparede/hazulejo)*1.05))
+
+    document.write(nazulejos);
 }
