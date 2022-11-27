@@ -44,7 +44,7 @@ api = 'http://127.0.0.1:3071'
                         url: api + '/insereUsuario',
                         data: {nome: nome, email: email, telefone: telefone},
                     }).done(function () {
-                        users.list();
+                        usuarios.list();
                     }).fail(function (msg) {
                         console.log('FAIL');
                     }).always(function (msg) {
@@ -55,7 +55,7 @@ api = 'http://127.0.0.1:3071'
         },
 
 
-        update(userId, oldTitle) {
+        update(cod_usuario, oldTitle) {
 
             var nome = prompt('Digite o novo nome:', oldTitle);
             if (nome) {
@@ -65,7 +65,7 @@ api = 'http://127.0.0.1:3071'
                         url: api + '/atualizaUsuario',
                         data: {nome: nome, cod_usuario: cod_usuario},
                     }).done(function () {
-                        users.list();
+                        usuarios.list();
                     }).fail(function (msg) {
                         console.log('FAIL');
                     }).always(function (msg) {
@@ -75,7 +75,7 @@ api = 'http://127.0.0.1:3071'
             }
         },
 
-        delete(userId) {
+        delete(cod_usuario) {
 
             if (confirm('Confirma a exclusão?')) {
                 $.ajax({
@@ -83,7 +83,7 @@ api = 'http://127.0.0.1:3071'
                     url: api + '/removeUsuario',
                     data: {cod_usuario: cod_usuario},
                 }).done(function () {
-                    users.list();
+                    usuarios.list();
                 }).fail(function (msg) {
                     console.log('FAIL');
                 }).always(function (msg) {
