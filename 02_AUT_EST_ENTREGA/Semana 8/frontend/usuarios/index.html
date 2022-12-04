@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	<title>Entrega -Semana 5</title>
+  <link rel="stylesheet" type="text/css" href="estilo.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    
+</head>
+
+<body>
+
+    <div id="principal" backgroundgrey >
+        <div class="horizontal-container backgroundgrey padding1rem" id="identificacao">
+            <p><img src="https://www.inteli.edu.br/wp-content/uploads/2022/07/06094246/novoformato_bannerhome_site_1440x640px-06-1.png" alt="Inteli"></p>
+            <div class="vertical-container center w100-prc">
+                <h2 class="center">Felipe Martins Moura</h2>
+                <p class="center">Jogador</p>
+            </div>
+        </div>
+        <div id="main">
+          <h1>ETAPA 7</h1>
+          <h2>Integração front-end e back-end e AJAX</h2>
+          
+          <div id="get" class="sections">
+              <h3>PARTE 1 - Testando o endpoint externo</h3>
+              Resultados obtidos com a requisição GET de: https://jsonplaceholder.typicode.com/todos/1
+          </div>
+          <button onclick="TestGET()" class="button-get">END POINT REMOTO</button>
+          
+          <div id="getDB" class="sections">
+              <h3>Resultado GET FROM DB</h3>
+              Resultados obtidos com a requisição GET no nosso banco:
+          </div>
+          <button onclick="TestGETDB()" class="button-get-db">END POINT LOCAL</button>
+        </div>
+        <h1> Calculadora do curriculo</h1>
+        <form name="form1" id="form1">
+            <input type="text" size="4" id="num1" value="">
+            <select name="op" id="op">
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="/">/</option>
+                <option value="*">*</option>
+                <option value="%">%</option>
+            </select>
+            <input type="text" size="4" id="num2" value="">
+            <input type="submit" class="button-calc" value="CALCULAR">
+        </form>
+        <div id="calc"></div>
+
+        <br>
+
+
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img class="d-block w-100" src="https://conteudo.imguol.com.br/c/esporte/ac/2022/11/11/angelo-e-marcos-leonardo-do-santos-1668195901332_v2_300x300.jpg.webp" alt="Primeiro Slide">
+              </div>
+              <div class="carousel-item">
+                <img class="d-block w-100" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Santos_logo.svg/1200px-Santos_logo.svg.png" alt="Segundo Slide">
+              </div>
+              <div class="carousel-item">
+                <img class="d-block w-100" src="https://www.lance.com.br/files/article_main/uploads/2021/08/28/612aa516eca58.jpeg" alt="Terceiro Slide">
+              </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Anterior</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Próximo</span>
+            </a>
+        </div>
+ 
+
+        <div class="horizontal-container backgroundgrey padding1rem" id="informacoescurriculo">
+            <div class="vertical-container center gap1" id="atividadesbackground">
+                <h1 id="itensatividadesbackground"> FORMAÇÃO </h1>
+                <p> Curso| 2022-2026</p>
+                <p> Engenharia de Software</p>
+                <h1></h1>
+                <h1></h1>
+                <h1 id="itensatividadesbackground"> EXPERIÊNCIA </h1>
+                <p> HGI Capital| 2020-2022</p>
+                <p> Novos Negócios</p>
+                <h1></h1>
+                <h1></h1>
+                <h1 id="itensatividadesbackground"> REALIZACOES </h1>
+                <p> Inteli| 2022</p>
+                <p> Melhor do fifa e do pingas</p>        
+            </div>
+            <div class="vertical-container gap1" id="sobremimbackground">
+                <h1 id="fontesobremimtitulos"> SOBRE MIM </h1>
+                <p id="fontesobremimtitulos"> Rua Princesa Isabel</p>
+                <p id="fontesobremimtitulos"> 62-982810404</p>
+                <p id="fontesobremimtitulos"> felipinho___666@gmai.com</p>
+                <p id="fontesobremimtitulos"> Excelente aluno, dedicado e persistente. Com exímias habilidades em blockchain e IOT, tendo ganhado um Nobel aos 8 anos por ser muito bom de bola</p>
+                <h1></h1>
+                <h1 id="fontesobremimtitulos"> HABILIDADES </h1>
+
+                <h1></h1>
+                <h1 id="fontesobremimtitulos"> PERSONALIDADE </h1>
+
+            </div>
+        </div>
+    </div>   
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
