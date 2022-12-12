@@ -1,6 +1,6 @@
 api = 'http://127.0.0.1:3071'
 
-    $(document).ready(() => {
+    $(document).ready(() => { 
         usuarios.list();
     });
 
@@ -38,7 +38,7 @@ api = 'http://127.0.0.1:3071'
             var telefone = prompt('Digite o telefone:');
             console.log(`${nome} - ${email} - ${telefone}`);
             if (nome && email && telefone) {
-                if (nome.trim() != '' && email.trim() != '' && telefone.trim() != '') {
+                if (nome.trim() != '' && email.trim() != '' && telefone.trim() != '') { //trim é para tirar espaço do inicio e final
                     $.ajax({
                         type: 'POST',
                         url: api + '/insereUsuario',

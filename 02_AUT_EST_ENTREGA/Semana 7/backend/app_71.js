@@ -11,12 +11,16 @@ const app = express();
 
 /* Servidor aplicação */
 
-app.use(express.static("../frontend/"));
+app.use(express.static("../frontend"));
 /* Definição dos endpoints */
 
 /******** CRUD ************/
 app.use(express.json());
 
+app.get('/', (req, res) => {
+    res.statusCode = 200;
+    res.setHeader('Access-Control-Allow-Origin', '*'); 
+})
 
 app.get('/usuarios', (req, res) => {
     res.statusCode = 200;
