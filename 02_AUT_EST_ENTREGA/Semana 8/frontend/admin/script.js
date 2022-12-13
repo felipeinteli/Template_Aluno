@@ -1,6 +1,6 @@
-api = 'http://127.0.0.1:3071'
+api = 'http://127.0.0.1:3081'
 
-    $(document).ready(() => {
+    $(document).ready(() => { 
         usuarios.list();
     });
 
@@ -38,7 +38,7 @@ api = 'http://127.0.0.1:3071'
             var telefone = prompt('Digite o telefone:');
             console.log(`${nome} - ${email} - ${telefone}`);
             if (nome && email && telefone) {
-                if (nome.trim() != '' && email.trim() != '' && telefone.trim() != '') {
+                if (nome.trim() != '' && email.trim() != '' && telefone.trim() != '') { //trim é para tirar espaço do inicio e final
                     $.ajax({
                         type: 'POST',
                         url: api + '/insereUsuario',
@@ -58,12 +58,14 @@ api = 'http://127.0.0.1:3071'
         update(cod_usuario, oldTitle) {
 
             var nome = prompt('Digite o novo nome:', oldTitle);
+            var email = prompt('Digite o novo email:', oldTitle);
+            var telefone = prompt('Digite o novo telefone:', oldTitle);
             if (nome) {
                 if (nome.trim() != '') {
                     $.ajax({
                         type: 'POST',
                         url: api + '/atualizaUsuario',
-                        data: {nome: nome, cod_usuario: cod_usuario},
+                        data: {nome: nome, cod_usuario: cod_usuario, email: email, telefone: telefone},
                     }).done(function () {
                         usuarios.list();
                     }).fail(function (msg) {

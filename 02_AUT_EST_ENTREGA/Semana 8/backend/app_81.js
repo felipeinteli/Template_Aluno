@@ -6,29 +6,34 @@ const sqlite3 = require('sqlite3').verbose();
 const DBPATH = 'curriculo.db';
 
 const hostname = '127.0.0.1';
-const port = 3071;
+const port = 3081;
 const app = express();
 
 /* Servidor aplicação */
 
-app.use(express.static("../frontend/"));
+app.use(express.static("../frontend"));
 /* Definição dos endpoints */
 
 /******** CRUD ************/
 app.use(express.json());
 
+app.get('/', (req, res) => {
+    res.statusCode = 200;
+    res.setHeader('Access-Control-Allow-Origin', '*'); 
+})
 
 app.get('/usuarios', (req, res) => {
     res.statusCode = 200;
     res.setHeader('Access-Control-Allow-Origin', '*'); 
     var db = new sqlite3.Database(DBPATH); // Abre o banco
-    var sql = 'SELECT * FROM usuarios ORDER BY nome COLLATE NOCASE';
+    var sql = 'SELECT cod_usuario, nome, telefone, email FROM usuarios ORDER BY nome COLLATE NOCASE';
     console.log(sql);
     db.all(sql, [],  (err, rows ) => {
         if (err) {
             throw err;
         }
         res.json(rows);
+        console.log("oi")
      });
     db.close(); // Fecha o banco
 });
@@ -84,10 +89,10 @@ app.post('/atualizaUsuario', urlencodedParser, (req, res) => {
 });
     
 // Exclui um registro (é o D do CRUD - Delete)
-app.get('/removeUsuario', urlencodedParser, (req, res) => {
+app.post('/removeUsuario', urlencodedParser, (req, res) => {
 	res.statusCode = 200;
 	res.setHeader('Access-Control-Allow-Origin', '*'); 
-	sql = "DELETE FROM usuarios WHERE cod_usuario='" + req.query.cod_usuario + "'";
+	sql = "DELETE FROM usuarios WHERE cod_usuario='" + req.body.cod_usuario + "'";
 	console.log(sql);
 	var db = new sqlite3.Database(DBPATH); // Abre o banco
 	db.run(sql, [],  err => {
@@ -114,7 +119,6 @@ app.get('/formacao', (req, res) => {
     db.close(); // Fecha o banco
 });
 
-app.use(express.json());
 app.get('/experiencia', (req, res) => {
     res.statusCode = 200;
     res.setHeader('Access-Control-Allow-Origin', '*'); 

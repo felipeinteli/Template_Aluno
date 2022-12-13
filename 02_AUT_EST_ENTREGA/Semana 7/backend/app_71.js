@@ -33,6 +33,7 @@ app.get('/usuarios', (req, res) => {
             throw err;
         }
         res.json(rows);
+        console.log("oi")
      });
     db.close(); // Fecha o banco
 });
@@ -118,7 +119,6 @@ app.get('/formacao', (req, res) => {
     db.close(); // Fecha o banco
 });
 
-app.use(express.json());
 app.get('/experiencia', (req, res) => {
     res.statusCode = 200;
     res.setHeader('Access-Control-Allow-Origin', '*'); 
